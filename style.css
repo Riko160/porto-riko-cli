@@ -1,6 +1,7 @@
 /* ============================================================
     MASTER STYLESHEET - PROFESSIONAL PORTFOLIO
-    Style: Expanded / Vertical (Easy to Read)
+    Developed for: Riko Priwantoro (Project Manager)
+    Style: Expanded Vertical & Fully Responsive
 ============================================================
 */
 
@@ -116,7 +117,8 @@ body {
 }
 
 .hero h1 {
-    font-size: 4rem;
+    /* clamp membuat font fleksibel: Min 2.5rem, Ideal 6vw, Max 4rem */
+    font-size: clamp(2.5rem, 6vw, 4rem); 
     font-weight: 800;
     line-height: 1.1;
     margin-bottom: 25px;
@@ -219,7 +221,7 @@ body {
     }
 }
 
-/* 8. COMMON SECTIONS (Services, Work, Contact) */
+/* 8. COMMON SECTIONS */
 .services, 
 .work, 
 .contact {
@@ -242,7 +244,7 @@ body {
     gap: 30px;
 }
 
-/* 9. CARDS (Service & Project) */
+/* 9. CARDS */
 .card, 
 .project-card {
     padding: 40px;
@@ -376,8 +378,7 @@ body {
     height: 150px;
 }
 
-/* 12. FOOTER */
-/* 12. ELEGANT MULTI-COLUMN FOOTER */
+/* 12. FOOTER SECTION */
 .footer {
     background: #1d1d1f;
     color: #ffffff;
@@ -387,13 +388,12 @@ body {
 
 .footer-container {
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr; /* Kolom brand lebih lebar */
+    grid-template-columns: 1.5fr 1fr 1fr;
     gap: 60px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Kolom Brand */
 .footer-brand .logo {
     margin-bottom: 20px;
     color: white;
@@ -407,7 +407,6 @@ body {
     line-height: 1.7;
 }
 
-/* Social Media Icons (Simple Circle Style) */
 .social-links {
     display: flex;
     gap: 15px;
@@ -433,7 +432,6 @@ body {
     transform: translateY(-5px);
 }
 
-/* Kolom Links & Info */
 .footer h4 {
     font-size: 1.2rem;
     margin-bottom: 25px;
@@ -464,7 +462,6 @@ body {
     margin-bottom: 15px;
 }
 
-/* Bottom Bar */
 .footer-bottom {
     margin-top: 60px;
     padding-top: 30px;
@@ -477,27 +474,83 @@ body {
     font-size: 0.9rem;
 }
 
-/* Responsive Footer */
-@media (max-width: 850px) {
+/* 13. RESPONSIVE DESIGN (MOBILE OPTIMIZATION) */
+@media (max-width: 900px) {
+    /* Navbar & Hero Adjustment */
+    .navbar {
+        padding: 15px 5%;
+    }
+
+    .nav-links {
+        display: none; /* Menyembunyikan menu di HP agar tidak berantakan */
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 100px 5% 60px;
+        gap: 30px;
+    }
+
+    .hero-content {
+        order: 1;
+    }
+
+    .hero-visual {
+        order: 2;
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem; /* Ukuran pas untuk layar HP */
+    }
+
+    .hero-btns {
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .glass-card {
+        padding: 10px;
+        border-radius: 30px;
+    }
+
+    .profile-img {
+        width: 100%;
+        max-width: 280px;
+        height: auto;
+    }
+
+    /* Hilangkan Floating Tags di HP agar tidak menumpuk */
+    .tag-1, .tag-2 {
+        display: none;
+    }
+
+    /* Grid Adjustment */
+    .service-grid, 
+    .project-grid, 
+    .testimonial-grid,
     .footer-container {
-        grid-template-columns: 1fr; /* Tumpuk jadi satu kolom di HP */
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    /* Sections Padding */
+    .services, .work, .contact, .testimonials {
+        padding: 60px 5%;
+    }
+
+    .contact-container {
+        flex-direction: column;
         gap: 40px;
         text-align: center;
     }
-    
+
     .footer-brand p {
         margin: 0 auto 25px;
     }
-    
+
     .social-links {
         justify-content: center;
     }
 }
-
-/* ============================================================
-    DOCUMENTATION NOTE:
-    - Expanded format digunakan agar mudah dibaca per baris.
-    - Properti dikelompokkan berdasarkan fungsinya.
-    - Selector yang punya styling mirip dipisah per baris agar clean.
-============================================================
-*/
