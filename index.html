@@ -1,121 +1,316 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Project Manager & System Analyst</title>
+    <title>Riko Priwantoro | Project Manager & System Analyst</title>
     
-    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="portfolio-style.css">
 </head>
 <body>
+    <!-- Dark Mode Toggle -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Animated Background Blobs -->
     <div class="blob-1"></div>
     <div class="blob-2"></div>
+    <div class="blob-3"></div>
 
-    <nav class="navbar">
+    <!-- Navigation with Hamburger Menu -->
+    <nav class="navbar" id="navbar">
         <div class="logo">Riko<span>.Dev</span></div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#services">Expertise</a></li>
-            <li><a href="#work">Projects</a></li>
+        
+        <!-- Hamburger Menu -->
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#services" class="nav-link">Expertise</a></li>
+            <li><a href="#work" class="nav-link">Projects</a></li>
+            <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
             <li><a href="#contact" class="btn-contact">Let's Talk</a></li>
         </ul>
     </nav>
 
+    <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-content">
-            <span class="badge">Project Manager Senior & Analyst</span>
+        <div class="hero-content fade-in">
+            <span class="badge">
+                <i class="fas fa-rocket"></i> Project Manager Senior & Analyst
+            </span>
             <h1>Crafting Digital Solutions with <span class="text-gradient">Logic & Precision</span></h1>
             <p>Spesialis dalam menjembatani visi bisnis klien menjadi sistem teknis yang handal. Berpengalaman mengelola tim developer dengan workflow yang efisien.</p>
+            
+            <!-- Stats Counter -->
+            <div class="stats-row">
+                <div class="stat-item">
+                    <h3 class="counter" data-target="50">0</h3>
+                    <p>Projects Completed</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="counter" data-target="30">0</h3>
+                    <p>Happy Clients</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="counter" data-target="5">0</h3>
+                    <p>Years Experience</p>
+                </div>
+            </div>
+            
             <div class="hero-btns">
-                <a href="#work" class="btn-main">Lihat Project</a>
-                <a href="#contact" class="btn-sub">Hubungi Saya</a>
+                <a href="#work" class="btn-main">
+                    <i class="fas fa-briefcase"></i> Lihat Project
+                </a>
+                <a href="#contact" class="btn-sub">
+                    <i class="fas fa-paper-plane"></i> Hubungi Saya
+                </a>
             </div>
         </div>
-        <div class="hero-visual">
+        
+        <div class="hero-visual fade-in-right">
             <div class="glass-card">
-                <img src="Gambarbebek.jpg" alt="Profile" class="profile-img">
-                <div class="floating-tag tag-1">🚀 Management</div>
-                <div class="floating-tag tag-2">🔍 Analysis</div>
+                <!-- Profile Image with Fallback -->
+                <div class="profile-img-wrapper">
+                    <img src="Gambarbebek.jpg" alt="Riko Priwantoro" class="profile-img" 
+                         onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22320%22 height=%22420%22%3E%3Crect fill=%22%230071e3%22 width=%22320%22 height=%22420%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2260%22 fill=%22white%22%3ERP%3C/text%3E%3C/svg%3E';">
+                </div>
+                <div class="floating-tag tag-1">
+                    <i class="fas fa-rocket"></i> Management
+                </div>
+                <div class="floating-tag tag-2">
+                    <i class="fas fa-magnifying-glass-chart"></i> Analysis
+                </div>
+                <div class="floating-tag tag-3">
+                    <i class="fas fa-code"></i> Development
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Services/Expertise Section -->
     <section id="services" class="services">
-        <h2 class="section-title">My Expertise</h2>
-        <div class="service-grid">
-            <div class="card">
-                <div class="icon">📊</div>
-                <h3>Project Planning</h3>
-                <p>Manajemen timeline, resource, dan risiko menggunakan metode Agile/Scrum.</p>
-            </div>
-            <div class="card">
-                <div class="icon">💻</div>
-                <h3>System Analysis</h3>
-                <p>Dokumentasi teknis, perancangan database (MySQL), dan skema logika sistem.</p>
-            </div>
-            <div class="card">
-                <div class="icon">🚀</div>
-                <h3>Deployment</h3>
-                <p>Memastikan sistem berbasis PHP/Laravel terintegrasi sempurna di server production.</p>
+        <div class="container">
+            <span class="badge-center">What I Do Best</span>
+            <h2 class="section-title">My Expertise</h2>
+            <p class="section-subtitle">Layanan profesional untuk membantu bisnis Anda berkembang</p>
+            
+            <div class="service-grid">
+                <div class="card service-card fade-up">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Project Planning</h3>
+                    <p>Manajemen timeline, resource, dan risiko menggunakan metode Agile/Scrum untuk hasil optimal.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Timeline Management</li>
+                        <li><i class="fas fa-check"></i> Resource Allocation</li>
+                        <li><i class="fas fa-check"></i> Risk Assessment</li>
+                    </ul>
+                </div>
+                
+                <div class="card service-card fade-up" style="animation-delay: 0.1s">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>System Analysis</h3>
+                    <p>Dokumentasi teknis, perancangan database (MySQL), dan skema logika sistem yang terstruktur.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Database Design</li>
+                        <li><i class="fas fa-check"></i> Technical Documentation</li>
+                        <li><i class="fas fa-check"></i> System Architecture</li>
+                    </ul>
+                </div>
+                
+                <div class="card service-card fade-up" style="animation-delay: 0.2s">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Deployment & Integration</h3>
+                    <p>Memastikan sistem berbasis PHP/Laravel terintegrasi sempurna di server production.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Server Configuration</li>
+                        <li><i class="fas fa-check"></i> API Integration</li>
+                        <li><i class="fas fa-check"></i> Quality Assurance</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Tech Stack Section -->
+    <section class="tech-stack">
+        <div class="container">
+            <h3>Technologies I Work With</h3>
+            <div class="tech-logos">
+                <div class="tech-item" title="PHP">
+                    <i class="fab fa-php"></i>
+                </div>
+                <div class="tech-item" title="Laravel">
+                    <i class="fab fa-laravel"></i>
+                </div>
+                <div class="tech-item" title="MySQL">
+                    <i class="fas fa-database"></i>
+                </div>
+                <div class="tech-item" title="Git">
+                    <i class="fab fa-git-alt"></i>
+                </div>
+                <div class="tech-item" title="Docker">
+                    <i class="fab fa-docker"></i>
+                </div>
+                <div class="tech-item" title="Figma">
+                    <i class="fab fa-figma"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
     <section id="work" class="work">
-        <h2 class="section-title">Latest Work</h2>
-        <div class="project-grid">
-            <div class="project-card">
-                <div class="project-info">
-                    <h4>E-Commerce System</h4>
-                    <p>Integrasi Payment Gateway (Midtrans/Xendit) dengan PHP Native.</p>
+        <div class="container">
+            <span class="badge-center">Portfolio</span>
+            <h2 class="section-title">Latest Work</h2>
+            <p class="section-subtitle">Proyek-proyek yang telah saya tangani dengan hasil memuaskan</p>
+            
+            <div class="project-grid">
+                <div class="project-card fade-up">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <a href="#" class="view-project">
+                                <i class="fas fa-external-link-alt"></i> View Details
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="tag">E-Commerce</span>
+                            <span class="tag">PHP</span>
+                        </div>
+                        <h4>E-Commerce System</h4>
+                        <p>Integrasi Payment Gateway (Midtrans/Xendit) dengan PHP Native. Sistem inventory otomatis dan dashboard analytics.</p>
+                        <div class="project-meta">
+                            <span><i class="fas fa-calendar"></i> 2024</span>
+                            <span><i class="fas fa-users"></i> 5 Person Team</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="project-card">
-                <div class="project-info">
-                    <h4>Company Profile</h4>
-                    <p>Web dinamis dengan fitur CMS custom untuk PT EKSA Digital.</p>
+                
+                <div class="project-card fade-up" style="animation-delay: 0.1s">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <a href="#" class="view-project">
+                                <i class="fas fa-external-link-alt"></i> View Details
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="tag">CMS</span>
+                            <span class="tag">Laravel</span>
+                        </div>
+                        <h4>Company Profile CMS</h4>
+                        <p>Web dinamis dengan fitur CMS custom untuk PT EKSA Digital. Multi-language support dan SEO optimized.</p>
+                        <div class="project-meta">
+                            <span><i class="fas fa-calendar"></i> 2024</span>
+                            <span><i class="fas fa-users"></i> 3 Person Team</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card fade-up" style="animation-delay: 0.2s">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <a href="#" class="view-project">
+                                <i class="fas fa-external-link-alt"></i> View Details
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="tag">SaaS</span>
+                            <span class="tag">API</span>
+                        </div>
+                        <h4>Inventory Management System</h4>
+                        <p>Sistem manajemen stok real-time dengan notifikasi otomatis. Integration dengan ERP existing client.</p>
+                        <div class="project-meta">
+                            <span><i class="fas fa-calendar"></i> 2023</span>
+                            <span><i class="fas fa-users"></i> 7 Person Team</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="contact">
-        <div class="contact-container">
-            <div class="contact-info">
-                <h2>Start a Conversation</h2>
-                <p>Punya ide proyek atau butuh jasa System Analyst? Mari berdiskusi bagaimana saya bisa membantu bisnis Anda.</p>
-            </div>
-            <form class="contact-form">
-                <input type="text" placeholder="Nama Lengkap">
-                <input type="email" placeholder="Email Aktif">
-                <textarea placeholder="Ceritakan kebutuhan Anda..."></textarea>
-                <button type="submit" class="btn-main">Kirim Pesan</button>
-            </form>
-        </div>
-    </section>
-
+    <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials">
-        <div class="container-small">
-            <span class="badge" style="display: block; width: fit-content; margin: 0 auto 20px;">Client Stories</span>
+        <div class="container">
+            <span class="badge-center">Client Stories</span>
             <h2 class="section-title">Apa Kata Mereka?</h2>
+            <p class="section-subtitle">Testimoni dari klien yang puas dengan hasil kerja saya</p>
+            
             <div class="testimonial-grid">
-                <div class="testi-card">
-                    <div class="quote-icon">“</div>
-                    <p class="testi-text">Analisis sistem yang diberikan sangat detail. Project e-commerce kami jadi lebih terstruktur dan selesai tepat waktu sesuai timeline.</p>
+                <div class="testi-card fade-up">
+                    <div class="quote-icon">"</div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testi-text">Analisis sistem yang diberikan sangat detail. Project e-commerce kami jadi lebih terstruktur dan selesai tepat waktu sesuai timeline yang dijanjikan.</p>
                     <div class="client-profile">
+                        <div class="client-avatar">BS</div>
                         <div class="client-info">
                             <strong>Budi Santoso</strong>
                             <span>CEO PT. Maju Jaya</span>
                         </div>
                     </div>
                 </div>
-                <div class="testi-card">
-                    <div class="quote-icon">“</div>
-                    <p class="testi-text">Anisa punya kemampuan komunikasi yang luar biasa antara kami (klien) dan tim developer. Dokumentasi sistemnya sangat rapi!</p>
+                
+                <div class="testi-card fade-up" style="animation-delay: 0.1s">
+                    <div class="quote-icon">"</div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testi-text">Riko punya kemampuan komunikasi yang luar biasa antara kami (klien) dan tim developer. Dokumentasi sistemnya sangat rapi dan mudah dipahami!</p>
                     <div class="client-profile">
+                        <div class="client-avatar">SA</div>
                         <div class="client-info">
                             <strong>Siti Aminah</strong>
                             <span>Operations Manager</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testi-card fade-up" style="animation-delay: 0.2s">
+                    <div class="quote-icon">"</div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testi-text">Profesional dan sangat memahami kebutuhan bisnis. Deployment sistem berjalan smooth tanpa downtime. Highly recommended!</p>
+                    <div class="client-profile">
+                        <div class="client-avatar">AD</div>
+                        <div class="client-info">
+                            <strong>Ahmad Dhani</strong>
+                            <span>Tech Lead Startup</span>
                         </div>
                     </div>
                 </div>
@@ -123,39 +318,126 @@
         </div>
     </section>
 
-<footer class="footer">
-    <div class="footer-container">
-        <div class="footer-brand">
-            <div class="logo">ANISA<span>.Dev</span></div>
-            <p>Project Manager & System Analyst spesialis solusi digital berbasis PHP. Membantu bisnis membangun sistem yang efisien dan terukur.</p>
-            <div class="social-links">
-                <a href="#">Ln</a>
-                <a href="#">Gh</a>
-                <a href="#">Ig</a>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-info fade-in-left">
+                    <span class="badge">Get In Touch</span>
+                    <h2>Start a Conversation</h2>
+                    <p>Punya ide proyek atau butuh jasa System Analyst? Mari berdiskusi bagaimana saya bisa membantu bisnis Anda berkembang.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>hello@riko.dev</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+62 812-3456-7890</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Cianjur, Jawa Barat</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form fade-in-right" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nama Lengkap</label>
+                        <input type="text" id="name" placeholder="Masukkan nama Anda" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="email@example.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" placeholder="Topik diskusi" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Pesan</label>
+                        <textarea id="message" rows="5" placeholder="Ceritakan kebutuhan Anda..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-main btn-submit">
+                        <i class="fas fa-paper-plane"></i> Kirim Pesan
+                    </button>
+                </form>
             </div>
         </div>
+    </section>
 
-        <div class="footer-links">
-            <h4>Navigasi</h4>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#work">Projects</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-            </ul>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-brand">
+                    <div class="logo">Riko<span>.Dev</span></div>
+                    <p>Project Manager & System Analyst spesialis solusi digital berbasis PHP. Membantu bisnis membangun sistem yang efisien dan terukur.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Navigasi</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#work">Projects</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h4>Kontak</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Cianjur, Jawa Barat</p>
+                    <p><i class="fas fa-envelope"></i> hello@riko.dev</p>
+                    <p><i class="fas fa-phone"></i> +62 812-3456-7890</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Riko Priwantoro. Crafted with <i class="fas fa-heart"></i> & Logic.</p>
+                <div class="footer-links-bottom">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
         </div>
+    </footer>
 
-        <div class="footer-contact">
-            <h4>Kontak</h4>
-            <p>📍 Cianjur, Jawa Barat</p>
-            <p>📧 hello@anisa.dev</p>
-            <p>💬 +62 812-3456-7890</p>
-        </div>
-    </div>
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
-    <div class="footer-bottom">
-        <p>&copy; 2026 Anisa Dev. Crafted with Logic & Style.</p>
-    </div>
-</footer>
+    <script src="portfolio-script.js"></script>
 </body>
 </html>
